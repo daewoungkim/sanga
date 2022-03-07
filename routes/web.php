@@ -19,6 +19,10 @@ Route::get('/add', [GoodsController::class, 'addItem']);
 Route::get('/about/{code}', [GoodsController::class, 'detail']);
 
 Route::prefix('zay')->group(function () {
+    Route::get('/test', function () {
+        dd(123);
+    });
+
     Route::get('/', function () {
         return view('main');
     });
