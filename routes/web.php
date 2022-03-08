@@ -20,7 +20,7 @@ Route::get('/about/{code}', [GoodsController::class, 'detail']);
 
 Route::prefix('zay')->group(function () {
     Route::get('/test', function () {
-        dd(1234);
+        dd('test');
     });
 
     Route::get('/', function () {
