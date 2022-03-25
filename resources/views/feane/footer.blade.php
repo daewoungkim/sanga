@@ -3,27 +3,27 @@
 <footer class="footer_section">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 footer-col">
-                <div class="footer_contact">
-                    <h4>
-                        Contact Us
-                    </h4>
-                    <div class="contact_link_box">
-                        <a href="">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <span> 주소 : 경기도 포천시 가산면 우금리 760-9</span>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            <span>팩스 031-542-4329</span>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                            <span>i1iwo@naver.com</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="col-md-4 footer-col">--}}
+{{--                <div class="footer_contact">--}}
+{{--                    <h4>--}}
+{{--                        Contact Us--}}
+{{--                    </h4>--}}
+{{--                    <div class="contact_link_box">--}}
+{{--                        <a href="">--}}
+{{--                            <i class="fa fa-map-marker" aria-hidden="true"></i>--}}
+{{--                            <span> 주소 : 경기도 포천시 가산면 우금리 760-9</span>--}}
+{{--                        </a>--}}
+{{--                        <a href="">--}}
+{{--                            <i class="fa fa-phone" aria-hidden="true"></i>--}}
+{{--                            <span>팩스 031-542-4329</span>--}}
+{{--                        </a>--}}
+{{--                        <a href="">--}}
+{{--                            <i class="fa fa-envelope" aria-hidden="true"></i>--}}
+{{--                            <span>i1iwo@naver.com</span>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="col-md-4 footer-col">
                 <div class="footer_detail">
                     <a href="" class="footer-logo">
