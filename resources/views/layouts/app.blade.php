@@ -17,6 +17,9 @@
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body>
-<script src="{{ mix('js/app.js') }}"></script>
+
+<script src="/js/app.js"></script>
 <script src="/vendor/datatables/buttons.server-side.js"></script>
 @stack('scripts')
+</body>
+</html>
