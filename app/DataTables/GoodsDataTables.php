@@ -19,8 +19,7 @@ class GoodsDataTables extends DataTable
     public function dataTable($query)
     {
         return datatables()
-            ->eloquent($query)
-            ->orderBy('id', 'desc');
+            ->eloquent($query);
     }
 
     /**
@@ -52,7 +51,7 @@ class GoodsDataTables extends DataTable
             ->setTableId('users-table')
             ->columns($this->getColumns())
             ->dom('frtip')
-            ->orderBy(1);
+            ->orderBy(0);
     }
 
     /**
