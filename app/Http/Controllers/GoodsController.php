@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Goods;
+use App\DataTables\GoodsDataTable;
 
 class GoodsController extends Controller
 {
@@ -52,10 +53,10 @@ class GoodsController extends Controller
         return view('feane.about', ['item'=>$item]);
     }
 
-    public function list()
+    public function list(GoodsDataTable $dataTable)
     {
         $goods = new Goods();
 
-        return $dataTable->render('users.index');
+        return $dataTable->render('admin.goods');
     }
 }
