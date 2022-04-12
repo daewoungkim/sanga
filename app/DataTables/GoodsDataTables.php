@@ -20,7 +20,7 @@ class GoodsDataTables extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'users.action');
+            ->orderBy('id', 'desc');
     }
 
     /**
