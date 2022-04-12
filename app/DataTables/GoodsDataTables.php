@@ -45,13 +45,12 @@ class GoodsDataTables extends DataTable
             ->parameters(
                 [
                     'rowCallback'=>'function(row, data) {
-                        $(row).on("click", function(){ location.href = "http://upload.fof.kr?id="+data.id; });
+                        $(row).on("click", function(){ location.href = "http://upload.fof.kr?code="+data.id; });
                     }'
                 ]
             )
             ->setTableId('users-table')
             ->columns($this->getColumns())
-            ->minifiedAjax()
             ->dom('frtip')
             ->orderBy(1);
     }
