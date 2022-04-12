@@ -70,10 +70,12 @@ class GoodsDataTables extends DataTable
                 ->width(60)
                 ->addClass('text-center'),
             Column::make('id'),
+            Column::make('code'),
             Column::make('name'),
-            Column::make('email'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+            Column::make('size'),
+            Column::make('size2'),
+            Column::make('size3'),
+            Column::make('category'),
         ];
     }
 
