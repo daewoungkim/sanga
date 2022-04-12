@@ -45,7 +45,7 @@ class GoodsDataTables extends DataTable
             ->parameters(
                 [
                     'rowCallback'=>'function(row, data) {
-                        $(row).on("click", function(){ location.href = "http://upload.fof.kr?code="+data.id; });
+                        $(row).on("click", function(){ location.href = "http://upload.fof.kr?code="+data.code; });
                     }'
                 ]
             )
@@ -63,11 +63,6 @@ class GoodsDataTables extends DataTable
     protected function getColumns()
     {
         return [
-            Column::computed('action')
-                ->exportable(false)
-                ->printable(false)
-                ->width(60)
-                ->addClass('text-center'),
             Column::make('id'),
             Column::make('code'),
             Column::make('name'),
