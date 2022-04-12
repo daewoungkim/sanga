@@ -57,6 +57,6 @@ class GoodsController extends Controller
     {
         $goods = new Goods();
 
-        return $dataTable->render('admin.goods');
+        return $dataTable->render('admin.goods.index');
     }
 }
