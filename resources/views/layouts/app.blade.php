@@ -17,6 +17,17 @@
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body>
+<style>
+    tr:hover{
+        cursor:pointer;
+    }
+</style>
+<div>
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
+
 <script src="/feane/js/jquery-3.4.1.min.js"></script>
 <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="/vendor/datatables/buttons.server-side.js"></script>
