@@ -45,7 +45,7 @@ class GoodsDataTables extends DataTable
             ->parameters(
                 [
                     'rowCallback'=>'function(row, data) {
-                        $(row).on("click", function(){ location.href = "http://upload.fof.kr?code="+data.code; });
+                        $(row).on("click", function(){ location.href = "http://upload.fof.kr?id="+data.id; });
                     }'
                 ]
             )
