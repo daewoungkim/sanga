@@ -51,4 +51,11 @@ class GoodsController extends Controller
         $item = $goods->getItem();
         return view('feane.about', ['item'=>$item]);
     }
+
+    public function list()
+    {
+        $goods = new Goods();
+
+        return $dataTable->render('users.index');
+    }
 }

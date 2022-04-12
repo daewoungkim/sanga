@@ -18,6 +18,8 @@ Route::get('/', [GoodsController::class, 'index']);
 Route::get('/add', [GoodsController::class, 'addItem']);
 Route::get('/about/{code}', [GoodsController::class, 'detail']);
 
+Route::get('/prod/list', [GoodsController::class, 'list'])->name('admin.goods');
+
 Route::prefix('zay')->group(function () {
     Route::get('/test', function () {
         dd('testddd');
