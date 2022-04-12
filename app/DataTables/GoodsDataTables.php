@@ -42,18 +42,18 @@ class GoodsDataTables extends DataTable
     public function html()
     {
         return $this->builder()
+            ->parameters(
+                [
+                    'rowCallback'=>'function(row, data) {
+                        $(row).on("click", function(){ location.href = "http://upload.fof.kr?id="+data.id; });
+                    }'
+                ]
+            )
             ->setTableId('users-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->dom('Bfrtip')
-            ->orderBy(1)
-            ->buttons(
-                Button::make('create'),
-                Button::make('export'),
-                Button::make('print'),
-                Button::make('reset'),
-                Button::make('reload')
-            );
+            ->dom('frtip')
+            ->orderBy(1);
     }
 
     /**
