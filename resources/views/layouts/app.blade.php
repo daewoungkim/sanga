@@ -19,6 +19,7 @@
 <body>
 <script src="/feane/js/jquery-3.4.1.min.js"></script>
 <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="/vendor/datatables/buttons.server-side.js"></script>
 @stack('scripts')
 </body>
 </html>
