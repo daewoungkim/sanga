@@ -1,7 +1,7 @@
 <?php
 namespace App\DataTables;
 
-use App\User;
+use App\Models\Goods;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
@@ -26,10 +26,10 @@ class GoodsDataTables extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\User $model
+     * @param \App\Models\Goods $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(User $model)
+    public function query(Goods $model)
     {
         return $model->newQuery();
     }
