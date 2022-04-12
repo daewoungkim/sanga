@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Goods;
-use App\DataTables\GoodsDataTable;
+use App\DataTables\GoodsDataTables;
 
 class GoodsController extends Controller
 {
@@ -53,7 +53,7 @@ class GoodsController extends Controller
         return view('feane.about', ['item'=>$item]);
     }
 
-    public function list(GoodsDataTable $dataTable)
+    public function list(GoodsDataTables $dataTable)
     {
         $goods = new Goods();
 
