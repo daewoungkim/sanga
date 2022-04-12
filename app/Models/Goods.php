@@ -17,13 +17,13 @@ class Goods extends Model
         if(!request()->has('page')) $offset = 0;
         else $offset = ( request()->page - 1 ) * $limit;
 
-        $qry = $this->select('category', DB::Raw("CONCAT(size,'(cm)') as size"),DB::Raw("IFNULL(CONCAT(size2,'(cm)'), '') AS size2"),'size3','name','id','code','file_name')
+        $qry = $this->select('category', DB::Raw("CONCAT(size,'(cm)') as size"),DB::Raw("IFNULL(CONCAT(size2,'(cm)'), '') AS size2"),'size3','name','id','code', 'code2','file_name')
             ->offset($offset)->limit($limit)->orderBy('id', 'desc');
-        if(request()->cate == 'new') $qry->whereRaw("code like 'new%'");
+        if(request()->cate == 'new') $qry->whereRaw("code2 like 'new%'");
         else if(request()->cate != '') $qry->where('category', request()->cate);
 
         if(request()->cate2 != '') $qry->where('size3', request()->cate2);
-        if(request()->keyword != '') $qry->whereRaw("code like '%".request()->keyword."%' or name like '%".request()->keyword."%'");
+        if(request()->keyword != '') $qry->whereRaw("code2 like '%".request()->keyword."%' or name like '%".request()->keyword."%'");
         $datas = $qry->get();
 
         return $datas;
@@ -33,11 +33,11 @@ class Goods extends Model
     {
         $qry = $this->select(DB::Raw('count(*) as cnt'));
 
-        if(request()->cate == 'new') $qry->whereRaw("code like 'new%'");
+        if(request()->cate == 'new') $qry->whereRaw("code2 like 'new%'");
         else if(request()->cate != '') $qry->where('category', request()->cate);
 
         if(request()->cate2 != '') $qry->where('size3', request()->cate2);
-        if(request()->keyword != '') $qry->whereRaw("code like '%".request()->keyword."%' or name like '%".request()->keyword."%'");
+        if(request()->keyword != '') $qry->whereRaw("code2 like '%".request()->keyword."%' or name like '%".request()->keyword."%'");
 
         $cnt = $qry->first();
         return $cnt;
@@ -45,7 +45,7 @@ class Goods extends Model
 
     public function getItem()
     {
-        $datas = $this->select('*')->where('code',request()->code)->first();
+        $datas = $this->select('*')->where('id',request()->id)->first();
 
         return $datas;
     }

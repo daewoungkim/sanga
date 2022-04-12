@@ -130,7 +130,7 @@
             <div class="row grid" id="goods-list-box">
                 @foreach ($items as $item)
                     <div class="col-6 all {{ $item->category }}">
-                        <a href="/about/{{ $item->code }}">
+                        <a href="/about/{{ $item->id }}">
                             <div class="box">
                                 <div>
                                     <div class="img-box">
@@ -141,7 +141,7 @@
                                             <h5>{{ $item->size3 }} {{ $item->name }}</h5>
                                         </div>
                                         <div style="color:#bebebe;">
-                                            <h6>Code : {{ $item->code }}</h6>
+                                            <h6>Code : {{ $item->code2 }}</h6>
                                         </div>
                                         <p>Size : {{ $item->size }}<br>{{ $item->size2 }}</p>
                                     </div>

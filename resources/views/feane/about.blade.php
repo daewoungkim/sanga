@@ -22,7 +22,7 @@
                         Size : {{ $item->size }}
                     </p>
                     <p>
-                        Code : {{ $item->code }}
+                        Code : {{ $item->code2 }}
                     </p>
                     <p>
                         {{ $item->size2 }}
@@ -47,7 +47,7 @@
 <script type="text/javascript">
     const userAgent = navigator.userAgent.toLocaleLowerCase();
     let smsUrl = '';
-    const uri = encodeURIComponent("{{env('APP_URL')}}/about/{{ $item->code }}");
+    const uri = encodeURIComponent("{{env('APP_URL')}}/about/{{ $item->id }}");
 
     if (userAgent.search('android') > -1) {
         smsUrl = 'sms:?body=제품 사진 보내드립니다. '+uri;
@@ -69,8 +69,8 @@
         description: 'Size : {{ $item->size }}, {{ $item->category }}',
         imageUrl: "{{env('APP_URL')}}/goods/{{ $item->file_name }}",
         link: {
-            mobileWebUrl: '{{env('APP_URL')}}/about/{{ $item->code }}',
-            webUrl: '{{env('APP_URL')}}/about/{{ $item->code }}'
+            mobileWebUrl: '{{env('APP_URL')}}/about/{{ $item->id }}',
+            webUrl: '{{env('APP_URL')}}/about/{{ $item->id }}'
         },
     },
     // social: {
@@ -82,8 +82,8 @@
         {
             title: '웹으로 보기',
             link: {
-                mobileWebUrl: '{{env('APP_URL')}}/about/{{ $item->code }}',
-                webUrl: '{{env('APP_URL')}}/about/{{ $item->code }}'
+                mobileWebUrl: '{{env('APP_URL')}}/about/{{ $item->id }}',
+                webUrl: '{{env('APP_URL')}}/about/{{ $item->id }}'
             },
         },
     ],

@@ -64,6 +64,7 @@ class GoodsDataTables extends DataTable
         return [
             Column::make('id'),
             Column::make('code'),
+            Column::make('code2'),
             Column::make('name'),
             Column::make('size'),
             Column::make('size2'),
