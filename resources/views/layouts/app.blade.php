@@ -17,9 +17,8 @@
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body>
-
-<script src="/js/app.js"></script>
-<script src="/vendor/datatables/buttons.server-side.js"></script>
+<script src="/feane/js/jquery-3.4.1.min.js"></script>
+<script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 @stack('scripts')
 </body>
 </html>
