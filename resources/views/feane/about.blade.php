@@ -19,7 +19,7 @@
                         </h2>
                     </div>
                     <p>
-                        Size : {{ $item->size }}
+                        Size : {{ $item->size }}(cm)
                     </p>
                     <p>
                         Code : {{ $item->code2 }}
