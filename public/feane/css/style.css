@@ -518,7 +518,6 @@ a:focus {
   border-radius: 15px;
   overflow: hidden;
   background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
-  max-height:1200px;
 }
 
 .food_section .box .img-box {
@@ -535,17 +534,17 @@ a:focus {
   border-radius: 0 0 0 45px;
   margin: -1px;
   padding: 25px;
-  max-height:800px;
 }
 
 .food_section .box .img-box img {
-  max-height:500px;
+  width:100%;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .food_section .box .detail-box {
   padding: 25px;
+  height:200px;
 }
 
 .food_section .box .detail-box h5 {
