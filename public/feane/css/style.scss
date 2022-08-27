@@ -437,8 +437,6 @@ a:focus {
         }
       }
 
-      p {}
-
       a {
         @include hero_btn($primary1, $white, 10px, 30px, 45px);
 
@@ -499,6 +497,7 @@ a:focus {
     border-radius: 15px;
     overflow: hidden;
     background: linear-gradient(to bottom, #f1f2f3 25px, $primary2 25px);
+    max-height:1200px;
 
     .img-box {
       background: #f1f2f3;
@@ -509,6 +508,7 @@ a:focus {
       border-radius: 0 0 0 45px;
       margin: -1px;
       padding: 25px;
+      max-height:800px;
 
       img {
         max-width: 100%;
