@@ -102,7 +102,7 @@
 
         <ul class="filters_menu">
             <li @if (!request()->has('cate')) class="active" @endif data-filter="">All</li>
-            <li @if (request()->has('cate') && request()->cate == 'new') class="active" @endif data-filter="new">신제품</li>
+            <li @if (request()->has('cate') && request()->cate == 'new') class="active" @endif data-filter="new"><span style="color:red;">신제품<span></li>
             <li @if (request()->has('cate') && request()->cate == '부처님') class="active" @endif data-filter="부처님">부처님</li>
             <li @if (request()->has('cate') && request()->cate == '산신') class="active" @endif data-filter="산신">산신</li>
             <li @if (request()->has('cate') && request()->cate == '용왕/옥황') class="active" @endif data-filter="용왕/옥황">용왕/옥황</li>
