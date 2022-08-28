@@ -67,7 +67,7 @@
                 <!-- Start Contact -->
                 <div class="container py-5">
                     <div class="row py-5">
-                        <form class="col-md-9 m-auto" action="/contact/upload" class="dropzone dz-clickable" id="myAwesomeDropzone">
+                        <form class="col-md-9 m-auto dropzone dz-clickable" action="/contact/upload" class="dropzone dz-clickable" id="myAwesomeDropzone">
                             <div class="row">
                                 <div class="form-group col-md-6 mb-3">
                                     <label for="inputname">이름</label>
@@ -95,7 +95,7 @@
                                 </div>
                             </div>
 
-                            
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                         </form>
                         <input type="file" multiple="multiple" class="dz-hidden-input" accept=".jpeg,.jpg,.png,.gif" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
                     </div>
@@ -113,9 +113,8 @@
         acceptedFiles: ".jpeg,.jpg,.png,.gif",
         autoProcessQueue: false,
 	    success:function(msg){
-          console.log(msg);
-          // alert('완료');
-          // location.reload();
+          alert('신청이 완료되었습니다.');
+          location.reload();
         },
         init: function() {
             var myDropzone = this;
@@ -147,7 +146,7 @@
 
                     $.ajax({
                         method: "POST",
-                        url: "/upload",
+                        url: "/contact/upload",
                         data: queryString
                     })
                     .done(function( msg ) {
