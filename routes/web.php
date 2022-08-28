@@ -21,6 +21,7 @@ Route::get('/about/{id}', [GoodsController::class, 'detail']);
 Route::get('/prod/list', [GoodsController::class, 'list'])->name('admin.goods');
 
 Route::get('/contact', [GoodsController::class, 'contact']);
+Route::post('/contact/upload', [GoodsController::class, 'upload']);
 
 Route::prefix('zay')->group(function () {
     Route::get('/test', function () {

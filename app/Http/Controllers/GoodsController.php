@@ -44,6 +44,11 @@ class GoodsController extends Controller
         return view('feane.contact');
     }
 
+    public function upload()
+    {
+        dd($_FILES);
+    }
+
     public function addItem()
     {
         $goods = new Goods();
