@@ -20,6 +20,8 @@ Route::get('/about/{id}', [GoodsController::class, 'detail']);
 
 Route::get('/prod/list', [GoodsController::class, 'list'])->name('admin.goods');
 
+Route::get('/contact', [GoodsController::class, 'contact']);
+
 Route::prefix('zay')->group(function () {
     Route::get('/test', function () {
         dd('testddd');
