@@ -134,7 +134,7 @@
                             <div class="box">
                                 <div>
                                     <div class="img-box">
-                                        <img src="/thumb/{{ $item->file_name }}" loading="lazy" alt="">
+                                        <img src="http://sanga.fof.kr/thumb/{{ $item->file_name }}" loading="lazy" alt="">
                                     </div>
                                     <div class="detail-box">
                                         <div style="padding-bottom:15px;">

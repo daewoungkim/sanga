@@ -39,6 +39,11 @@ class GoodsController extends Controller
             ]);
     }
 
+    public function contact()
+    {
+        return view('feane.contact');
+    }
+
     public function addItem()
     {
         $goods = new Goods();
