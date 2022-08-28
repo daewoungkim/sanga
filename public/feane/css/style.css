@@ -521,7 +521,7 @@ a:focus {
 }
 
 .food_section .box .img-box {
-  background: #ffffff;
+  background: #000000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
