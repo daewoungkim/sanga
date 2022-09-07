@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Goods;
 use App\DataTables\GoodsDataTables;
+use Str;
 
 class GoodsController extends Controller
 {
@@ -46,7 +47,13 @@ class GoodsController extends Controller
 
     public function upload()
     {
-        dd($_FILES);
+        $file = request()->file('file');
+        $ext = Str::after($file->getMimeType(),'/');
+        $path = $file->storeAs(
+            'contact', request()->name."_".date('ymdhis').".".$ext,['disk'=>'public']
+        );
+        $url = asset("storage".$path);
+        return $url;
     }
 
     public function addItem()
