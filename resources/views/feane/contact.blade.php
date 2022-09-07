@@ -55,7 +55,7 @@
                     <div class="img-box col-sm-5">
                         <img src="http://sanga.fof.kr/thumb/new049-075.png" loading="lazy" alt="" style="width:100%;">
                     </div>
-                    <div class="col-sm-2" style="text-align:center;"> 
+                    <div class="col-sm-2" style="text-align:center;">
                         <div display="flex" class="Box-nv15kw-0 Flex-arghxi-0 cEagMo"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:text-bottom"><path fill-rule="evenodd" d="M13.22 19.03a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 10-1.06 1.06l4.97 4.97H3.75a.75.75 0 000 1.5h14.44l-4.97 4.97a.75.75 0 000 1.06z"></path></svg></div>
                     </div>
                     <div class="img-box col-sm-5">
@@ -108,13 +108,38 @@
 
 <script>
 
-	Dropzone.options.myAwesomeDropzone = {
+    Dropzone.options.myAwesomeDropzone = {
         clickable: true,
         acceptedFiles: ".jpeg,.jpg,.png,.gif",
         autoProcessQueue: false,
-	    success:function(msg){
-          alert('신청이 완료되었습니다.');
-          location.reload();
+        success:function(path){
+            console.log(path);
+
+            let des = $("input[name='name']").val()+"/"+$("input[name='phone']").val()+"/"+$("#message").val();
+            Kakao.Link.createDefaultButton({
+                container: '#create-kakao-link-btn',
+                objectType: 'feed',
+                content: {
+                    title: $("input[name='subject']").val(),
+                    description: des,
+                    imageUrl: path,
+                    link: {
+                        mobileWebUrl: 'http://sanga.fof.kr',
+                        webUrl: 'http://sanga.fof.kr'
+                    },
+                },
+                buttons: [
+                    {
+                        title: '웹으로 보기',
+                        link: {
+                            mobileWebUrl: 'http://sanga.fof.kr/about/351',
+                            webUrl: 'http://sanga.fof.kr/about/351'
+                        },
+                    },
+                ],
+            });
+
+            setTimeout(() => $("#create-kakao-link-btn").click(), 1000);
         },
         init: function() {
             var myDropzone = this;
@@ -136,7 +161,7 @@
                     return false;
                 }
 
-                if($("input[name='message']").val() == ''){
+                if($("#message").val() == ''){
                     alert('내용을 입력해주세요');
                     return false;
                 }
@@ -149,14 +174,14 @@
                         url: "/contact/upload",
                         data: queryString
                     })
-                    .done(function( msg ) {
-                        alert( msg );
-                    });
+                        .done(function( msg ) {
+                            alert( msg );
+                        });
                     return false;
                 }
-              
-              e.preventDefault();
-              myDropzone.processQueue();
+
+                e.preventDefault();
+                myDropzone.processQueue();
             });
         }
     };
