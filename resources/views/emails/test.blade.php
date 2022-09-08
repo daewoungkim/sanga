@@ -9,7 +9,7 @@
 <p>핸드폰번호 : {{ $phone }}</p>
 <p>내용 : {{ $msg }}</p>
 <div style="width:100%">
-    <img src="{{ $message->embed(public_path(). $path) }}">
+    <img src="{{ $message->embed(public_path()."/". $path) }}">
 </div>
 </body>
 </html>
