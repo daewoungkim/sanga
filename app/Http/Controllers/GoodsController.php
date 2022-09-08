@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestEmail;
 use Illuminate\Http\Request;
 use App\Models\Goods;
 use App\DataTables\GoodsDataTables;
+use Illuminate\Support\Facades\Mail;
 use Str;
 
 class GoodsController extends Controller
@@ -53,7 +55,16 @@ class GoodsController extends Controller
             'contact', request()->name."_".date('ymdhis').".".$ext,['disk'=>'public']
         );
         $url = asset("storage".$path);
-        return $url;
+
+        $data = [
+            'name' => request()->name,
+            'phone' => request()->phone,
+            'subject' => request()->subject,
+            'message' => request()->message,
+            'path' => $url,
+        ];
+        $result = Mail::to('biig@kakao.com')->send(new TestEmail($data));
+        return $result;
     }
 
     public function addItem()
