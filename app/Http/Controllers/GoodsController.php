@@ -54,15 +54,13 @@ class GoodsController extends Controller
         $path = $file->storeAs(
             'contact', request()->name."_".date('ymdhis').".".$ext,['disk'=>'public']
         );
-        $url = storage_path('app/public/'.$path);
-//        $url = "storage/".$path;
 
         $data = [
             'name' => request()->name,
             'phone' => request()->phone,
             'subject' => request()->subject,
             'msg' => request()->message,
-            'path' => $url,
+            'path' => $path,
         ];
         $result = Mail::to('biig@kakao.com')->send(new TestEmail($data));
         return $result;
