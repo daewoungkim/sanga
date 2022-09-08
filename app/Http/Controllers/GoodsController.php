@@ -54,7 +54,7 @@ class GoodsController extends Controller
         $path = $file->storeAs(
             'contact', request()->name."_".date('ymdhis').".".$ext,['disk'=>'public']
         );
-        $url = asset("storage/".$path);
+        $url = "storage/".$path;
 
         $data = [
             'name' => request()->name,
