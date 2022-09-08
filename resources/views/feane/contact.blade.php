@@ -104,43 +104,17 @@
             </div>
         </div>
     </div>
-        <a id="create-kakao-link-btn"></a>
 </section>
 
 <script>
 
-    Dropzone.options.myAwesomeDropzone = {
+	Dropzone.options.myAwesomeDropzone = {
         clickable: true,
         acceptedFiles: ".jpeg,.jpg,.png,.gif",
         autoProcessQueue: false,
-        success:function(path){
-            console.log(path);
-
-            let des = $("input[name='name']").val()+"/"+$("input[name='phone']").val()+"/"+$("#message").val();
-            Kakao.Link.createDefaultButton({
-                container: '#create-kakao-link-btn',
-                objectType: 'feed',
-                content: {
-                    title: $("input[name='subject']").val(),
-                    description: des,
-                    imageUrl: path,
-                    link: {
-                        mobileWebUrl: 'http://sanga.fof.kr',
-                        webUrl: 'http://sanga.fof.kr'
-                    },
-                },
-                buttons: [
-                    {
-                        title: '웹으로 보기',
-                        link: {
-                            mobileWebUrl: 'http://sanga.fof.kr/about/351',
-                            webUrl: 'http://sanga.fof.kr/about/351'
-                        },
-                    },
-                ],
-            });
-
-            setTimeout(() => $("#create-kakao-link-btn").click(), 1000);
+	    success:function(msg){
+          alert('신청이 완료되었습니다.');
+          location.reload();
         },
         init: function() {
             var myDropzone = this;
@@ -162,7 +136,7 @@
                     return false;
                 }
 
-                if($("#message").val() == ''){
+                if($("input[name='message']").val() == ''){
                     alert('내용을 입력해주세요');
                     return false;
                 }
@@ -175,14 +149,14 @@
                         url: "/contact/upload",
                         data: queryString
                     })
-                        .done(function( msg ) {
-                            alert( msg );
-                        });
+                    .done(function( msg ) {
+                        alert( msg );
+                    });
                     return false;
                 }
 
-                e.preventDefault();
-                myDropzone.processQueue();
+              e.preventDefault();
+              myDropzone.processQueue();
             });
         }
     };
