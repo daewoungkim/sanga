@@ -42,7 +42,9 @@ $(window).on('load', function () {
 
     $('.filters_menu li').click(function () {
         cate = $(this).data('filter');
-        location.href = "?cate="+cate;
+        if(cate != '삼베칠보') location.href = "?cate="+cate;
+        else location.href = "?keyword="+cate;
+
         return false;
 
 
