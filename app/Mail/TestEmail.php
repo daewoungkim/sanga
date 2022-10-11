@@ -29,14 +29,12 @@ class TestEmail extends Mailable
      */
     public function build()
     {
-        //i1iwo@naver.com
-        $address = 'sosaeodn@naver.com';
         $subject = $this->data['subject'];
         $name = $this->data['name'];
 
         return $this->view('emails.test')
-            ->from($address, $name)
             ->subject($subject)
-            ->with($this->data);
+            ->with($this->data)
+            ->attach($this->data['path']);
     }
 }
