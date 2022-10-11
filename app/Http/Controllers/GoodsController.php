@@ -62,7 +62,7 @@ class GoodsController extends Controller
             'msg' => request()->message,
             'path' => $path,
         ];
-        $result = Mail::to('biig@kakao.com')->send(new TestEmail($data));
+        $result = Mail::to('sosaeodn@naver.com')->send(new TestEmail($data));
         return $result;
     }
 

@@ -30,7 +30,7 @@ class TestEmail extends Mailable
     public function build()
     {
         //i1iwo@naver.com
-        $address = 'biig@kakao.com';
+        $address = 'sosaeodn@naver.com';
         $subject = $this->data['subject'];
         $name = $this->data['name'];
 
