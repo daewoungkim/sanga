@@ -64,6 +64,7 @@ class GoodsController extends Controller
             'path' => $storagePath.$path,
         ];
         $result = Mail::to(env('TO_MAIL'))->send(new TestEmail($data));
+        Storage::disk('public')->delete($path);
         return $result;
     }
 
