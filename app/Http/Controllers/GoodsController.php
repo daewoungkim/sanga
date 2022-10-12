@@ -63,8 +63,7 @@ class GoodsController extends Controller
             'msg' => request()->message,
             'path' => $storagePath.$path,
         ];
-        //'i1iwo@naver.com'
-        $result = Mail::to('sosaeodn@naver.com')->send(new TestEmail($data));
+        $result = Mail::to(env('TO_MAIL'))->send(new TestEmail($data));
         return $result;
     }
 
