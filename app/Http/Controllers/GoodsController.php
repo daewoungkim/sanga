@@ -54,13 +54,14 @@ class GoodsController extends Controller
         $path = $file->storeAs(
             'contact', request()->name."_".date('ymdhis').".".$ext,['disk'=>'public']
         );
+        $storagePath = storage_path('app/public');
 
         $data = [
             'name' => request()->name,
             'phone' => request()->phone,
             'subject' => request()->subject,
             'msg' => request()->message,
-            'path' => $path,
+            'path' => $storagePath.$path,
         ];
         //'i1iwo@naver.com'
         $result = Mail::to('sosaeodn@naver.com')->send(new TestEmail($data));
