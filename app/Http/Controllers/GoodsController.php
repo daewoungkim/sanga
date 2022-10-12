@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Goods;
 use App\DataTables\GoodsDataTables;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Str;
 
 class GoodsController extends Controller
