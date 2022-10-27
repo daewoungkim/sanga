@@ -31,6 +31,11 @@
             </div>
         </div>
 
+        <div class="row">
+            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+            <div class='embed-container'><iframe src='https://www.youtube.com/embed/undefined' frameborder='0' allowfullscreen></iframe></div>
+        </div>
+
         <div style="margin-top: 20px;text-align:right;">
             <a href="/goods/{{ $item->file_name }}" download>
                 <img src="/feane/images/download.png" alt="" style="max-width: 40px;background-color:#fff;">
