@@ -169,16 +169,24 @@
                         <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']-1}}{{$queryString}}">이전</a></li>
                         <li class="page-item active"><a class="page-link">1 <span class="sr-only">(current)</span></a></li>
                         <li class="page-item"><a class="page-link" href="?page=2{{$queryString}}">2</a></li>
-                        @if (($pageInfo['totPage'] / 16) >= 3)
                         <li class="page-item"><a class="page-link" href="?page=3{{$queryString}}">3</a></li>
+                        <li class="page-item"><a class="page-link" href="?page=4{{$queryString}}">4</a></li>
+                        @if (($pageInfo['totPage'] / 16) >= 5)
+                        <li class="page-item"><a class="page-link" href="?page=5{{$queryString}}">5</a></li>
                         @endif
                         <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']+1}}{{$queryString}}">다음</a></li>
                     @else
                         <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']-1}}{{$queryString}}">이전</a></li>
-                        <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']-1}}{{$queryString}}">{{$pageInfo['page']-1}}</a></li>
+                        @if ($pageInfo['page'] == 2)
+                            <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']-1}}{{$queryString}}">{{$pageInfo['page']-1}}</a></li>
+                        @else
+                            <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']-2}}{{$queryString}}">{{$pageInfo['page']-2}}</a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']-1}}{{$queryString}}">{{$pageInfo['page']-1}}</a></li>
+                        @endif
                         <li class="page-item active"><a class="page-link">{{$pageInfo['page']}} <span class="sr-only">(current)</span></a></li>
                         @if (($pageInfo['totPage'] / 16) > $pageInfo['page'])
                             <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']+1}}{{$queryString}}">{{$pageInfo['page']+1}}</a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']+2}}{{$queryString}}">{{$pageInfo['page']+2}}</a></li>
                             <li class="page-item"><a class="page-link" href="?page={{$pageInfo['page']+1}}{{$queryString}}">다음</a></li>
                         @endif
                     @endif
