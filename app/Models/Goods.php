@@ -18,7 +18,7 @@ class Goods extends Model
         else $offset = ( request()->page - 1 ) * $limit;
 
         $qry = $this->select('category', DB::Raw("CONCAT(size,'(cm)') as size"),DB::Raw("IFNULL(CONCAT(size2,'(cm)'), '') AS size2"),'size3','name','id','code', 'code2','file_name')
-            ->offset($offset)->limit($limit)->orderBy('code2', 'desc');
+            ->offset($offset)->limit($limit)->orderBy('code', 'desc');
         if(request()->cate == 'new') $qry->whereRaw("code like 'new%'");
         else if(request()->cate != '') $qry->where('category', request()->cate);
 
