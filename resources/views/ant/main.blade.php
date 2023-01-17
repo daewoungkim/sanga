@@ -14,8 +14,8 @@
 
     <title> 홍대개미 - 부천역점 </title>
 </head>
-
-<body style="background: url(/ant/images/logo.png)">
+<!-- style="background: url(/ant/images/logo.png)"-->
+<body>
 
 <!-- jQery -->
 <div class="hero_area">
