@@ -26,7 +26,7 @@ Route::post('/contact/upload', [GoodsController::class, 'upload']);
 
 Route::prefix('zay')->group(function () {
     Route::get('/test', function () {
-        return view('ant.main');
+        dd('testddd');
     });
 
     Route::get('/', function () {
@@ -51,6 +51,6 @@ Route::prefix('zay')->group(function () {
 });
 
 
-Route::get('/ant', function () {
+Route::get('/bucheon_ant', function () {
     return view('ant.main');
 });
