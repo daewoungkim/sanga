@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoodsController;
+use App\Http\Controllers\AntController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +51,4 @@ Route::prefix('zay')->group(function () {
 });
 
 
+Route::get('/ant', [AntController::class, 'index']);
