@@ -51,4 +51,6 @@ Route::prefix('zay')->group(function () {
 });
 
 
-Route::get('/ant', [AntController::class, 'index']);
+Route::get('/ant', function () {
+    return view('ant.main');
+});
