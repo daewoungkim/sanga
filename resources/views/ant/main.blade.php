@@ -19,7 +19,7 @@
 
 <!-- jQery -->
 <div class="hero_area">
-    <h1>Hello</h1>
+    <h1><a href="https://www.naver.com">홍대개미 바로가기</a></h1>
 </div>
-</body>>
+</body>
 </html>
