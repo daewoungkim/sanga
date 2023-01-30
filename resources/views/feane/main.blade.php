@@ -11,55 +11,7 @@
                         <div class="col-md-7 col-lg-6 " style="margin:auto;">
                             <div class="detail-box">
                                 <div class="img-box">
-                                    <img src="/feane/images/carousel_01.png" alt="" data-href="/?cate=%EB%B6%80%EC%B2%98%EB%8B%98&cate2=1%EC%9E%906%EC%B9%98">
-                                </div>
-                                {{--<h1>
-                                    Fast Food Restaurant
-                                </h1>
-                                <p>
-                                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                                </p>
-                                <div class="btn-box">
-                                    <a href="" class="btn1">
-                                        Order Now
-                                    </a>
-                                </div>--}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item ">
-                <div class="container ">
-                    <div class="row">
-                        <div class="col-md-7 col-lg-6 " style="margin:auto;">
-                            <div class="detail-box">
-                                <div class="img-box">
-                                    <img src="/feane/images/carousel_02.png" alt="" data-href="/?cate=대신/불사/궁대신&cate2=2자">
-                                </div>
-                                {{--<h1>
-                                    Fast Food Restaurant
-                                </h1>
-                                <p>
-                                    Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                                </p>
-                                <div class="btn-box">
-                                    <a href="" class="btn1">
-                                        Order Now
-                                    </a>
-                                </div>--}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item ">
-                <div class="container ">
-                    <div class="row">
-                        <div class="col-md-7 col-lg-6 " style="margin:auto;">
-                            <div class="detail-box">
-                                <div class="img-box">
-                                    <img src="/feane/images/carousel_03.png" alt="" data-href="/?keyword=호랑이">
+                                    <img src="/feane/images/carousel_01.png" alt="" data-href="?keyword=%EB%8F%84%EA%B8%88%EC%B9%A0%EB%B3%B4">
                                 </div>
                                 {{--<h1>
                                     Fast Food Restaurant
