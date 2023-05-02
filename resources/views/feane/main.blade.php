@@ -11,7 +11,7 @@
                         <div class="col-md-7 col-lg-6 " style="margin:auto;">
                             <div class="detail-box">
                                 <div class="img-box">
-                                    <img src="/feane/images/carousel_04.jpg" alt="" data-href="?keyword=%EB%8F%84%EA%B8%88%EC%B9%A0%EB%B3%B4">
+                                    <img src="/feane/images/carousel_05.jpg" alt="" data-href="?keyword=--">
                                 </div>
                                 {{--<h1>
                                     Fast Food Restaurant
