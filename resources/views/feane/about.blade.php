@@ -41,7 +41,18 @@
             </div>
         @endif
 
-
+        @if ($item->details != '')
+            @foreach (explode(",",$item->details) as $file_name)
+            <div class="row">
+                <div class="col-md-6" style="margin-top: 20px;">
+                    <div class="img-box">
+                        <img src="/detail/{{ $file_name }}" alt="">
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        @endif
+        
         <div style="margin-top: 20px;text-align:right;">
             <a href="/goods/{{ $item->file_name }}" download>
                 <img src="/feane/images/download.png" alt="" style="max-width: 40px;background-color:#fff;">

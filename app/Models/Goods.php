@@ -45,7 +45,11 @@ class Goods extends Model
 
     public function getItem()
     {
-        $datas = $this->select('*')->where('id',request()->id)->first();
+        $datas = $this->select('tb_goods.*',DB::Raw('group_concat(tb_goods_detail.file_name) as details'))
+            ->leftJoin('tb_goods_detail','tb_goods.id','=','tb_goods_detail.goods_id')
+            ->where('tb_goods.id',request()->id)
+            ->groupBy('tb_goods.id')
+            ->first();
 
         return $datas;
     }
