@@ -43,10 +43,10 @@
 
         @if ($item->details != '')
             @foreach (explode(",",$item->details) as $file_name)
-            <div class="row">
+            <div class="row justify-content-md-center">
                 <div class="col-md-6" style="margin-top: 20px;">
                     <div class="img-box">
-                        <img src="/detail/{{ $file_name }}" alt="">
+                        <img src="/detail/{{$item->id}}/{{ $file_name }}" alt="">
                     </div>
                 </div>
             </div>

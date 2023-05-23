@@ -19,7 +19,16 @@ class GoodsDataTables extends DataTable
     public function dataTable($query)
     {
         return datatables()
-            ->eloquent($query);
+            ->eloquent($query)
+            ->addColumn('action', function($row){
+                $btn = '
+                <div style="float:left;">
+                    <a href="http://upload.fof.kr?id='.$row->id.'" class="edit btn btn-primary btn-sm">메인</a>
+                    <a href="http://upload.fof.kr/sub.php?id='.$row->id.'" class="edit btn btn-info btn-sm">서브</a>
+                </div>
+                ';
+                return $btn;
+            });
     }
 
     /**
@@ -41,13 +50,6 @@ class GoodsDataTables extends DataTable
     public function html()
     {
         return $this->builder()
-            ->parameters(
-                [
-                    'rowCallback'=>'function(row, data) {
-                        $(row).on("click", function(){ location.href = "http://upload.fof.kr?id="+data.id; });
-                    }'
-                ]
-            )
             ->setTableId('users-table')
             ->columns($this->getColumns())
             ->dom('frtip')
@@ -70,16 +72,10 @@ class GoodsDataTables extends DataTable
             Column::make('size2'),
             Column::make('size3'),
             Column::make('category'),
+            Column::computed('action')
+                ->exportable(false)
+                ->printable(false)
+                ->addClass('text-center'),
         ];
-    }
-
-    /**
-     * Get filename for export.
-     *
-     * @return string
-     */
-    protected function filename()
-    {
-        return 'Goods_' . date('YmdHis');
     }
 }
