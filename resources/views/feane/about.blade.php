@@ -18,6 +18,17 @@
                             {{ $item->size3 }} {{ $item->name }}
                         </h2>
                     </div>
+                    <div style="margin-top: 20px;text-align:right;">
+                        <a href="/goods/{{ $item->file_name }}" download>
+                            <img src="/feane/images/download.png" alt="" style="max-width: 40px;background-color:#fff;">
+                        </a>
+                        <a id="create-kakao-link-btn" href="javascript:;">
+                            <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" alt="카카오링크 보내기 버튼" style="max-width: 40px;"/>
+                        </a>
+                        <a id="sendSms">
+                            <img src="/feane/images/sms.png" alt="" style="max-width: 40px;background-color:#fff;">
+                        </a>
+                    </div>
                     <p>
                         Size : {{ $item->size }}(cm)
                     </p>
@@ -52,18 +63,6 @@
             </div>
             @endforeach
         @endif
-        
-        <div style="margin-top: 20px;text-align:right;">
-            <a href="/goods/{{ $item->file_name }}" download>
-                <img src="/feane/images/download.png" alt="" style="max-width: 40px;background-color:#fff;">
-            </a>
-            <a id="create-kakao-link-btn" href="javascript:;">
-                <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" alt="카카오링크 보내기 버튼" style="max-width: 40px;"/>
-            </a>
-            <a id="sendSms">
-                <img src="/feane/images/sms.png" alt="" style="max-width: 40px;background-color:#fff;">
-            </a>
-        </div>
     </div>
 </section>
 <script type="text/javascript">
