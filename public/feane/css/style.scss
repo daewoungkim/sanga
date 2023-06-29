@@ -348,10 +348,10 @@ a:focus {
       font-size: 14px;
     }
 
-    a {
-      @include hero_btn($primary1, $white, 10px, 45px, 45px);
-      margin-top: 10px;
-    }
+    // a {
+    //   @include hero_btn($primary1, $white, 10px, 45px, 45px);
+    //   margin-top: 10px;
+    // }
 
   }
 

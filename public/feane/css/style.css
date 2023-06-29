@@ -646,7 +646,7 @@ a:focus {
   position: relative;
   z-index: 2;
 }
-
+/* 
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
@@ -657,7 +657,7 @@ a:focus {
   transition: all 0.3s;
   border: none;
   margin-top: 15px;
-}
+} */
 
 .about_section .detail-box a:hover {
   background-color: #e69c00;
