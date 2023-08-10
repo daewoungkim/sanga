@@ -90,7 +90,7 @@
                                     <div class="img-box">
                                         <img src="http://sanga.fof.kr/thumb/{{ $item->file_name }}" loading="lazy" alt="">
                                     </div>
-                                    <div class="detail-box">
+                                    <div class="detail-box" style="height:@if ($item->category == '전기인등') 250px; @else 200px; @endif !important;">
                                         <div style="padding-bottom:15px;">
                                             <h5>{{ $item->size3 }} {{ $item->name }}</h5>
                                         </div>
