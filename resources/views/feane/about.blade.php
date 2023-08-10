@@ -30,7 +30,7 @@
                         </a>
                     </div>
                     <p>
-                        Size : {{ $item->size }}(cm)
+                        가로: {{ $item->size }}(cm)
                     </p>
                     <p>
                         Code : {{ $item->code2 }}
@@ -87,7 +87,7 @@
         objectType: 'feed',
         content: {
         title: '{{ $item->size3 }} {{ $item->name }}',
-        description: 'Size : {{ $item->size }}, {{ $item->category }}',
+        description: '가로: {{ $item->size }}, {{ $item->category }}',
         imageUrl: "{{env('APP_URL')}}/goods/{{ $item->file_name }}",
         link: {
             mobileWebUrl: '{{env('APP_URL')}}/about/{{ $item->id }}',

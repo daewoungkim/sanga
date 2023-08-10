@@ -55,7 +55,7 @@
         <ul class="filters_menu">
             <li @if (!request()->has('cate') && !request()->has('keyword')) class="active" @endif data-filter="">All</li>
             <li @if (request()->has('cate') && request()->cate == 'new') class="active" @endif data-filter="new"><span style="color:red;">신제품<span></li>
-            <li @if (request()->has('cate') && request()->cate == '전기인등') class="active" @endif data-filter="전기인등">전기인등</li>
+            <li @if (request()->has('cate') && request()->cate == '전기인등') class="active" @endif data-filter="전기인등"><span style="color:blue;">전기인등</span></li>
             <li @if (request()->keyword == '삼베칠보') class="active" @endif data-filter="삼베칠보">삼베칠보</li>
             <li @if (request()->has('cate') && request()->cate == '부처님') class="active" @endif data-filter="부처님">부처님</li>
             <li @if (request()->has('cate') && request()->cate == '산신') class="active" @endif data-filter="산신">산신</li>
@@ -97,7 +97,7 @@
                                         <div style="color:#bebebe;">
                                             <h6>Code : {{ $item->code2 }}</h6>
                                         </div>
-                                        <p>Size : {{ $item->size }}<br>{{ $item->size2 }}</p>
+                                        <p>가로:{{ $item->size }}<br>{{ $item->size2 }}</p>
                                         @if ($item->category == '전기인등')
                                         <p>Category : {{ $item->category }}</p>
                                         @endif

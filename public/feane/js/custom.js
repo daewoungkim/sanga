@@ -106,7 +106,7 @@ function getItem() {
                     "                                    <div style=\"color:#bebebe;\">\n" +
                     "                                        <h6>Code : " + data.code + "</h6>\n" +
                     "                                    </div>\n" +
-                    "                                    <p>\n Size : " +
+                    "                                    <p>\n 가로: " +
                     "                                        " + data.size + "<br>\n" +
                     "                                        " + data.size2 + "\n" +
                     "                                    </p>\n" +

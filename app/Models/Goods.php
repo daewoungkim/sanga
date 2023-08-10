@@ -25,6 +25,10 @@ class Goods extends Model
         if(request()->cate2 != '') $qry->where('size3', request()->cate2);
         if(request()->keyword != '') $qry->whereRaw("code2 like '%".request()->keyword."%' or name like '%".request()->keyword."%'");
         $datas = $qry->get();
+        foreach($datas as $data){
+            $sizeCut = explode("x",$data->size);
+            $data->size = $sizeCut[0]." 세로:".$sizeCut[1]." 높이:".$sizeCut[2];
+        }
 
         return $datas;
     }
@@ -50,6 +54,9 @@ class Goods extends Model
             ->where('tb_goods.id',request()->id)
             ->groupBy('tb_goods.id')
             ->first();
+
+        $sizeCut = explode("x",$datas->size);
+        $datas->size = $sizeCut[0]." 세로:".$sizeCut[1]." 높이:".$sizeCut[2];
 
         return $datas;
     }
