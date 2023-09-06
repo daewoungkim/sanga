@@ -27,7 +27,10 @@ class Goods extends Model
         $datas = $qry->get();
         foreach($datas as $data){
             $sizeCut = explode("x",$data->size);
-            $data->size = $sizeCut[0]." 세로:".$sizeCut[1]." 높이:".$sizeCut[2];
+            $data->size = '';
+            if(isset($sizeCut[0])) $data->size .= $sizeCut[0];
+            if(isset($sizeCut[1])) $data->size .= " 세로:".$sizeCut[1];
+            if(isset($sizeCut[2])) $data->size .= " 높이:".$sizeCut[2];
         }
 
         return $datas;
@@ -56,7 +59,10 @@ class Goods extends Model
             ->first();
 
         $sizeCut = explode("x",$datas->size);
-        $datas->size = $sizeCut[0]." 세로:".$sizeCut[1]." 높이:".$sizeCut[2];
+        $datas->size = '';
+        if(isset($sizeCut[0])) $datas->size .= $sizeCut[0];
+        if(isset($sizeCut[1])) $datas->size .= " 세로:".$sizeCut[1];
+        if(isset($sizeCut[2])) $datas->size .= " 높이:".$sizeCut[2];
 
         return $datas;
     }
