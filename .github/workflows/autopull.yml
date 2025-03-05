@@ -1,0 +1,25 @@
+name: Auto Pull
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 1.234.53.132 >> ~/.ssh/known_hosts
+
+      - name: Git Pull
+        run: |
+          ssh -T git@1.234.53.132 || true
+          git pull origin main
