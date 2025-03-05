@@ -1,3 +1,9 @@
+function hasQueryParam(param) {
+    const url = window.location.href;
+    const regex = new RegExp('[?&]' + param + '(=|&|$)');
+    return regex.test(url);
+}
+
 // to get current year
 function getYear() {
     var currentDate = new Date();
@@ -8,6 +14,7 @@ function getYear() {
 getYear();
 let page = 1;
 let cate = '';
+let topCategory = '';
 let keyword = '';
 
 search = (event) => {
@@ -36,14 +43,20 @@ $(window).on('load', function () {
     $('.filters_detail_menu li').click(function () {
         cate = $(".filters_menu li.active").data('filter');
         cate2 = $(this).data('filter');
-        location.href = "?cate=" + cate +"&cate2="+cate2;
+        let herf = "?cate=" + cate +"&cate2="+cate2;
+        if(hasQueryParam('topCategory')) href += "&topCategory="+topCategory;
+        location.href = herf;
+
         return false;
     });
 
     $('.filters_menu li').click(function () {
         cate = $(this).data('filter');
-        if(cate != '삼베칠보') location.href = "?cate="+cate;
-        else location.href = "?keyword="+cate;
+        if(cate != '삼베칠보') let herf = "?cate="+cate;
+        else let herf = "?keyword="+cate;
+
+        if(hasQueryParam('topCategory')) href += "&topCategory="+topCategory;
+        location.href = href;
 
         return false;
 
@@ -83,7 +96,7 @@ function getItem() {
         type: 'get',
         url: '/add',
         dataType: 'json',
-        data: { 'page':page, 'cate':cate, 'keyword':keyword },
+        data: { 'page':page, 'cate':cate, 'keyword':keyword, 'topCategory':topCategory },
         success: function(res) {
             const datas = res.data;
             if(datas.length < 16) $("#btn-more-item").hide();

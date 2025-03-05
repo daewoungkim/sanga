@@ -66,7 +66,6 @@
             <li @if (request()->has('cate') && request()->cate == '도사/글문') class="active" @endif data-filter="도사/글문">도사/글문</li>
             <li @if (request()->has('cate') && request()->cate == '동자류') class="active" @endif data-filter="동자류">동자류</li>
             <li @if (request()->has('cate') && request()->cate == '선녀') class="active" @endif data-filter="선녀">선녀</li>
-            <li @if (request()->has('cate') && request()->cate == '탱화') class="active" @endif data-filter="탱화">탱화</li>
             <li @if (request()->has('cate') && request()->cate == '기타') class="active" @endif data-filter="기타">기타</li>
         </ul>
         @else
