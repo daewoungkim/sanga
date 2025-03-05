@@ -17,7 +17,11 @@ class Goods extends Model
         if(!request()->has('page')) $offset = 0;
         else $offset = ( request()->page - 1 ) * $limit;
 
+        if(!request()->has('topCategory')) $topCategory = '불상';
+        else $topCategory = request()->topCategory;
+
         $qry = $this->select('category', DB::Raw("CONCAT(size,'(cm)') as size"),DB::Raw("IFNULL(CONCAT(size2,'(cm)'), '') AS size2"),'size3','name','id','code', 'code2','file_name')
+            ->where('top_category', $topCategory)
             ->offset($offset)->limit($limit)->orderBy('code', 'desc');
         if(request()->cate == 'new') $qry->whereRaw("code like 'new%'");
         else if(request()->cate != '') $qry->where('category', request()->cate);
@@ -38,7 +42,11 @@ class Goods extends Model
 
     public function getTotalCnt()
     {
-        $qry = $this->select(DB::Raw('count(*) as cnt'));
+        if(!request()->has('topCategory')) $topCategory = '불상';
+        else $topCategory = request()->topCategory;
+
+        $qry = $this->select(DB::Raw('count(*) as cnt'))
+            ->where('top_category', $topCategory);
 
         if(request()->cate == 'new') $qry->whereRaw("code like 'new%'");
         else if(request()->cate != '') $qry->where('category', request()->cate);
