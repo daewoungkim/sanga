@@ -1,6 +1,6 @@
 @include('feane.header')
 
-@if (!request()->has('cate') && !request()->has('keyword'))
+@if (!request()->has('cate') && !request()->has('keyword') && !request()->has('topCategory'))
 <!-- slider section -->
 <section class="slider_section ">
     <div id="customCarousel1" class="carousel slide" data-ride="carousel">
