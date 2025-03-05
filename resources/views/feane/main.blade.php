@@ -52,6 +52,7 @@
             </h2>
         </div>--}}
 
+        @if (!request()->has('topCategory'))
         <ul class="filters_menu">
             <li @if (!request()->has('cate') && !request()->has('keyword')) class="active" @endif data-filter="">All</li>
             <li @if (request()->has('cate') && request()->cate == 'new') class="active" @endif data-filter="new"><span style="color:red;">신제품<span></li>
@@ -68,6 +69,16 @@
             <li @if (request()->has('cate') && request()->cate == '탱화') class="active" @endif data-filter="탱화">탱화</li>
             <li @if (request()->has('cate') && request()->cate == '기타') class="active" @endif data-filter="기타">기타</li>
         </ul>
+        @else
+        <ul class="filters_menu">
+            <li @if (!request()->has('cate') && !request()->has('keyword')) class="active" @endif data-filter="">All</li>
+            <li @if (request()->has('cate') && request()->cate == 'new') class="active" @endif data-filter="new"><span style="color:red;">신제품<span></li>
+            <li @if (request()->has('cate') && request()->cate == '탱화') class="active" @endif data-filter="탱화">탱화</li>
+            <li @if (request()->has('cate') && request()->cate == '족탱화') class="active" @endif data-filter="족탱화">족탱화</li>
+            <li @if (request()->has('cate') && request()->cate == '2x3') class="active" @endif data-filter="2x3">2x3</li>
+            <li @if (request()->has('cate') && request()->cate == '4x6') class="active" @endif data-filter="4x6">4x6</li>
+        </ul>
+        @endif
 
         @if (request()->has('cate'))
             @if (count($cate2) > 0)
