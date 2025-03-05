@@ -26,6 +26,7 @@ class GoodsController extends Controller
             $cate2 = $goods->getDetailCate();
         }
         if(request()->has('keyword')) $queryString .= "&keyword=".request()->keyword;
+        if(request()->has('topCategory')) $queryString .= "&topCategory=".request()->topCategory;
 
         $items = $goods->getItems();
         $totPage = $goods->getTotalCnt();
