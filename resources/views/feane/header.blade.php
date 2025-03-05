@@ -53,8 +53,8 @@
                 <a class="navbar-brand" href="/">
                     <img src="/feane/images/logo.png" alt="">
                 </a>
-                <a class="navbar-brand" style="position: relative;left:-80px;" href="/?topCategory=탱화">
-                    탱화
+                <a class="navbar-brand" href="/?topCategory=탱화">
+                    <img src="/feane/images/logo_sub.png" alt="" style="width:65px;position: relative;left:-60px;">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
