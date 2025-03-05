@@ -52,9 +52,9 @@ $(window).on('load', function () {
 
     $('.filters_menu li').click(function () {
         cate = $(this).data('filter');
-        let herf = '';
-        if(cate != '삼베칠보') herf = "?cate="+cate;
-        else herf = "?keyword="+cate;
+        let href = '';
+        if(cate != '삼베칠보') href = "?cate="+cate;
+        else href = "?keyword="+cate;
 
         if(hasQueryParam('topCategory')) href += "&topCategory="+topCategory;
         location.href = href;
