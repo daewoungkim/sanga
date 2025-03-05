@@ -1,8 +1,10 @@
-function hasQueryParam(param) {
-    const url = window.location.href;
-    const regex = new RegExp('[?&]' + param + '(=|&|$)');
-    return regex.test(url);
+function getQueryParam(param) {
+    const url = window.location.href; // 현재 URL
+    const regex = new RegExp('[?&]' + param + '=([^&#]*)'); // 정규식 패턴
+    const match = url.match(regex);
+    return match ? decodeURIComponent(match[1]) : null; // 값이 있으면 반환, 없으면 null
 }
+
 
 // to get current year
 function getYear() {
@@ -14,7 +16,7 @@ function getYear() {
 getYear();
 let page = 1;
 let cate = '';
-let topCategory = '';
+let topCategory = getQueryParam('topCategory');
 let keyword = '';
 
 search = (event) => {
@@ -44,7 +46,7 @@ $(window).on('load', function () {
         cate = $(".filters_menu li.active").data('filter');
         cate2 = $(this).data('filter');
         let herf = "?cate=" + cate +"&cate2="+cate2;
-        if(hasQueryParam('topCategory')) href += "&topCategory="+topCategory;
+        if(topCategory != null) href += "&topCategory="+topCategory;
         location.href = herf;
 
         return false;
@@ -56,7 +58,7 @@ $(window).on('load', function () {
         if(cate != '삼베칠보') href = "?cate="+cate;
         else href = "?keyword="+cate;
 
-        if(hasQueryParam('topCategory')) href += "&topCategory="+topCategory;
+        if(topCategory != null) href += "&topCategory="+topCategory;
         location.href = href;
 
         return false;
