@@ -53,7 +53,7 @@
                 <a class="navbar-brand" href="/">
                     <img src="/feane/images/logo.png" alt="">
                 </a>
-                <a class="navbar-brand" href="/?topCategory=탱화">
+                <a class="navbar-brand" style="position: relative;top:-80px;" href="/?topCategory=탱화">
                     탱화
                 </a>
 
