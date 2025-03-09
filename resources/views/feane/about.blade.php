@@ -30,7 +30,7 @@
                         </a>
                     </div>
                     <p>
-                        가로: {{ $item->size }} @if ($item->top_category == '탱화') cm(액자포함) @else (cm) @endif
+                        가로: {{ $item->size }}(cm)
                     </p>
                     <p>
                         Code : {{ $item->code2 }}
