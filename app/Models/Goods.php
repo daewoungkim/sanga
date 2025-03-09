@@ -20,7 +20,7 @@ class Goods extends Model
         if(!request()->has('topCategory')) $topCategory = '불상';
         else $topCategory = request()->topCategory;
 
-        $qry = $this->select('category', DB::Raw("CONCAT(size,'(cm)') as size"),DB::Raw("IFNULL(CONCAT(size2,'(cm)'), '') AS size2"),'size3','name','id','code', 'code2','file_name')
+        $qry = $this->select('category', DB::Raw("CONCAT(size,'(cm)') as size"),DB::Raw("IFNULL(CONCAT(size2,'(cm)'), '') AS size2"),'size3','name','id','code', 'code2','file_name','top_category')
             ->where('top_category', $topCategory)
             ->offset($offset)->limit($limit)->orderBy('code', 'desc');
         if(request()->cate == 'new') $qry->whereRaw("code like 'new%'");
